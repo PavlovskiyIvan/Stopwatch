@@ -5,14 +5,19 @@ export default function App() {
   let [hour, setHour] = useState(null);
   let [minute, setMinute] = useState(null);
   let [second, setSecond] = useState(null);
-  let [clickedCounting, setClickedCounting] = useState(false);
-  let [timer, setTimer] = useState(null);
-  let [clickedPause, setClickedPause] = useState(false);
-  let [firstClick, setFirstClick] = useState(null);
-  let [secondClick, setSecondClick] = useState(null);
+
   let [stopHour, setStopHour] = useState(null);
   let [stopMinute, setStopMinute] = useState(null);
   let [stopSecond, setStopSecond] = useState(null);
+
+  let [clickedCounting, setClickedCounting] = useState(false);
+
+  let [timer, setTimer] = useState(null);
+
+  let [clickedPause, setClickedPause] = useState(false);
+
+  let [firstClick, setFirstClick] = useState(null);
+  let [secondClick, setSecondClick] = useState(null);
 
   let counting = () => {
     clickedCounting === false
@@ -74,7 +79,7 @@ export default function App() {
               setSecond((second += 1));
             }
           }
-        })
+        }, 1000)
       );
     } else if (clickedCounting === true) {
       setTimer(clearInterval(timer));
@@ -145,7 +150,7 @@ export default function App() {
             setSecond((second += 1));
           }
         }
-      })
+      }, 1000)
     );
   };
   return (
